@@ -1,0 +1,139 @@
+.contacts-page{
+  padding-top: 88px;
+  padding-bottom: 75px;
+  @include bp(xs) {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+}
+
+.contacts-page__title{
+  padding-top: 40px;
+  padding-bottom: 50px;
+  border-top: 1px solid #000;
+  display: flex;
+  @include bp(md) {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+  @include bp(xs) {
+    padding-top: 20px;
+    padding-bottom: 27px;
+  }
+  .page-title{
+    width: calc(100% - 160px);
+    @include bp(md) {
+      width: 100%;
+      margin-top: 30px;
+    }
+    @include bp(xs) {
+      margin-top: 15px;
+    }
+  }
+}
+
+.contacts-page__main{
+  margin-bottom: 55px;
+  @include bp(xs) {
+    margin-bottom: 30px;
+  }
+}
+
+.contacts-page__map{
+  width: 100%;
+  height: 500px;
+  @include bp(sm) {
+    height: calc(75vw - 30px);
+  }
+  iframe{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.contacts-page__info{
+  background-color: $grey;
+  padding: 90px 170px 80px;
+  @include bp(lg) {
+    padding: 90px 110px 80px;
+  }
+  @include bp(lg) {
+    padding: 40px 30px 20px;
+  }
+  @include bp(xs) {
+    padding: 20px 20px 4px;
+  }
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 18px;
+    line-height: 27px;
+    @include bp(xs) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+    li{
+      display: flex;
+      width: 50%;
+      margin-bottom: 20px;
+      @include bp(sm) {
+        width: 100%;
+      }
+      @include bp(xs) {
+        margin-bottom: 16px;
+      }
+      &:nth-child(1){
+        @include bp(sm) {
+          order: 1;
+        }
+      }
+      &:nth-child(2){
+        @include bp(sm) {
+          order: 3;
+        }
+      }
+      &:nth-child(3){
+        @include bp(sm) {
+          order: 2;
+        }
+      }
+      &:nth-child(4){
+        @include bp(sm) {
+          order: 4;
+        }
+      }
+      i{
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        margin-right: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include bp(xs) {
+          width: 16px;
+          height: 16px;
+          min-width: 16px;
+          margin-right: 10px;
+        }
+        svg{
+          max-width: 100%;
+          height: fit-content;
+          max-height: 100%;
+        }
+      }
+      span{
+        display: block;
+      }
+      a{
+        color: #000;
+        text-decoration: none;
+        opacity: 1;
+        &:hover{
+          text-decoration: none;
+          opacity: .5;
+        }
+      }
+    }
+  }
+}

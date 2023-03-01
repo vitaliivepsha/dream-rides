@@ -1,0 +1,248 @@
+.catalog-section{
+  padding: 60px 0;
+  @include bp(xs) {
+    padding: 20px 0 30px;
+  }
+}
+
+.catalog-top__main{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 60px;
+  @include bp(xs) {
+    margin-bottom: 20px;
+  }
+}
+
+.triple-arrow{
+  @include bp(md) {
+    width: 120px;
+    height: fit-content;
+  }
+  @include bp(sm) {
+    width: 90px;
+    height: fit-content;
+  }
+  @include bp(xs) {
+    width: 52px;
+  }
+}
+
+.catalog-head__main{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-bottom: 35px;
+  border-top: 1px solid #000;
+  @include bp(md) {
+    flex-direction: column;
+  }
+  @include bp(xs) {
+    padding-top: 15px;
+    padding-bottom: 25px;
+  }
+  .section-title{
+    @include bp(md) {
+      margin-bottom: 15px;
+    }
+    @include bp(xs) {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.section-title{
+  display: block;
+  font-family: $title;
+  font-size: 36px;
+  line-height: 47px;
+  text-transform: uppercase;
+  @include bp(sm) {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  @include bp(xs) {
+    font-size: 16px;
+    line-height: 21px
+  }
+}
+
+.catalog-head__main-descr{
+  display: block;
+  font-size: 21px;
+  line-height: 22px;
+  @include bp(xs) {
+    font-size: 13px;
+    line-height: 13px;
+  }
+}
+
+.catalog-main{
+  display: flex;
+  flex-wrap: wrap;
+  @include bp(xs) {
+    margin: 0 -5px;
+  }
+  .col-xs-6{
+    margin-bottom: 40px;
+    @include bp(xs) {
+      padding: 0 5px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.catalog-item{
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  &:hover{
+    text-decoration: none;
+    color: #000;
+    .catalog-item__pic{
+      img{
+        transform: scale(1.1);
+      }
+    }
+  }
+  &:focus{
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+.catalog-item__pic{
+  position: relative;
+  height: 309px;
+  overflow: hidden;
+  @include bp(lg) {
+    height: 263px;
+  }
+  @include bp(md) {
+    height: calc(32vw - 45px);
+  }
+  @include bp(xs) {
+    height: calc(37.5vw - 20px);
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: ease-in-out .4s;
+  }
+}
+
+.catalog-item__label{
+  position: absolute;
+  z-index: 2;
+  left: 13px;
+  top: 13px;
+  display: block;
+  height: 35px;
+  width: fit-content;
+  min-width: 62px;
+  padding: 9px 7px 4px;
+  font-family: $title;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 14px;
+  line-height: 18px;
+  @include bp(sm) {
+    padding: 5px 5px 2px;
+    height: auto;
+    min-width: unset;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  @include bp(xs) {
+    padding: 2px 3px 0;
+    font-size: 8px;
+    line-height: 10px;
+    left: 7px;
+    top: 7px;
+  }
+  &.new{
+    background-color: #030096;
+  }
+}
+
+.catalog-item__info{
+  padding: 14px 0;
+  border-bottom: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  @include bp(xs) {
+    padding-top: 7px;
+    padding-bottom: 10px;
+  }
+}
+
+.catalog-item__text{
+  width: calc(100% - 90px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include bp(sm) {
+    width: 100%;
+  }
+}
+
+.catalog-item__title{
+  display: block;
+  font-size: 21px;
+  line-height: 22px;
+  @include bp(sm) {
+    font-size: 18px;
+    line-height: 19px;
+  }
+  @include bp(xs) {
+    font-size: 13px;
+    line-height: 130%;
+    min-height: 34px;
+  }
+}
+
+.catalog-item__price{
+  margin-top: 7px;
+  display: flex;
+  align-items: baseline;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: $title;
+  @include bp(xs) {
+    margin-top: 3px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  small{
+    font-family: $default;
+    font-size: 12px;
+    line-height: 12px;
+    margin-left: 6px;
+    @include bp(xs) {
+      font-size: 10px;
+      line-height: 10px;
+      margin-left: 2px;
+    }
+  }
+}
+
+.catalog-item__logo{
+  max-width: 90px;
+  display: flex;
+  align-items: center;
+  @include bp(sm) {
+    display: none;
+  }
+  img{
+    max-width: 85px;
+    max-height: 50px;
+    object-fit: contain;
+  }
+}

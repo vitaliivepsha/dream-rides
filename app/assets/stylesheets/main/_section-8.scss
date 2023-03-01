@@ -1,0 +1,120 @@
+.contacts-section{
+  padding-top: 100px;
+  padding-bottom: 75px;
+  @include bp(xs) {
+    padding-top: 46px;
+    padding-bottom: 50px;
+  }
+  .section-title{
+    margin-bottom: 30px;
+    @include bp(xs) {
+      margin-bottom: 21px;
+    }
+  }
+}
+
+.contacts-inner{
+  border-top: 1px solid #000;
+  padding-top: 30px;
+  @include bp(xs) {
+    padding-top: 25px;
+  }
+}
+
+.contacts-main{
+  display: flex;
+  height: 397px;
+  margin-bottom: 53px;
+  @include bp(md) {
+    height: auto;
+    flex-direction: column;
+  }
+  @include bp(xs) {
+    margin-bottom: 31px;
+  }
+}
+
+.contacts-info{
+  width: 570px;
+  background-color: $grey;
+  height: 100%;
+  padding: 94px 62px 60px;
+  @include bp(lg) {
+    width: 52%;
+  }
+  @include bp(md) {
+    width: 100%;
+    padding: 80px 60px;
+  }
+  @include bp(xs) {
+    padding: 20px;
+  }
+  ul{
+    font-size: 18px;
+    line-height: 27px;
+    @include bp(xs) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+    li{
+      display: flex;
+      +li{
+        margin-top: 20px;
+        @include bp(xs) {
+          margin-top: 16px;
+        }
+      }
+      i{
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        margin-right: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include bp(xs) {
+          width: 16px;
+          height: 16px;
+          min-width: 16px;
+          margin-right: 10px;
+        }
+        svg{
+          max-width: 100%;
+          height: fit-content;
+          max-height: 100%;
+        }
+      }
+      span{
+        display: block;
+      }
+      a{
+        color: #000;
+        text-decoration: none;
+        opacity: 1;
+        &:hover{
+          text-decoration: none;
+          opacity: .5;
+        }
+      }
+    }
+  }
+}
+
+.contacts-map{
+  width: 540px;
+  height: 100%;
+  @include bp(lg) {
+    width: 48%;
+  }
+  @include bp(md) {
+    width: 100%;
+    height: 500px;
+  }
+  @include bp(xs) {
+    height: calc(64.2vw - 30px);
+  }
+  iframe{
+    width: 100%;
+    height: 100%;
+  }
+}

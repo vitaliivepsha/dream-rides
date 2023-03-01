@@ -1,0 +1,149 @@
+.legend-section{
+  position: relative;
+  color: #fff;
+  &:before{
+    position: absolute;
+    content: '';
+    height: 450px;
+    width: 100%;
+    background-color: #000;
+    @include bp(xs) {
+      height: 180px;
+    }
+  }
+  .container{
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.legend-text{
+  padding-top: 110px;
+  height: 450px;
+  margin-bottom: 164px;
+  @include bp(xs) {
+    padding-top: 43px;
+    height: 180px;
+    margin-bottom: 91px;
+  }
+  .section-title{
+    max-width: 730px;
+    margin-bottom: 46px;
+    @include bp(xs) {
+      margin-bottom: 11px;
+    }
+  }
+}
+
+.legend-pic{
+  position: absolute;
+  object-fit: contain;
+  width: 769px;
+  height: 577px;
+  right: 0;
+  top: 114px;
+  @include bp(md) {
+    width: calc(100vw - 30px);
+  }
+  @include bp(xs) {
+    width: 244px;
+    height: 183px;
+    top: 81px;
+    right: 11px;
+  }
+}
+
+.lines{
+  display: flex;
+  flex-direction: column;
+  span{
+    display: block;
+    width: 100%;
+    background-color: #000;
+    height: 7px;
+    @include bp(xs) {
+      height: 5px;
+    }
+    +span{
+      height: 5px;
+      margin-top: 30px;
+      @include bp(xs) {
+        height: 4px;
+        margin-top: 20px;
+      }
+      +span{
+        height: 3px;
+        margin-top: 30px;
+        @include bp(xs) {
+          margin-top: 19px;
+        }
+        +span{
+          height: 2px;
+          margin-top: 30px;
+          @include bp(xs) {
+            margin-top: 18px;
+          }
+          +span{
+            height: 1px;
+            margin-top: 25px;
+            @include bp(xs) {
+              margin-top: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &_reverse{
+    flex-direction: column-reverse;
+    span{
+      +span{
+        margin-top: 0;
+        margin-bottom: 30px;
+        @include bp(xs) {
+          margin-bottom: 20px;
+        }
+        +span{
+          margin-top: 0;
+          margin-bottom: 30px;
+          @include bp(xs) {
+            margin-bottom: 19px;
+          }
+          +span{
+            margin-top: 0;
+            margin-bottom: 30px;
+            @include bp(xs) {
+              margin-bottom: 18px;
+            }
+            +span{
+              margin-top: 0;
+              margin-bottom: 25px;
+              @include bp(xs) {
+                margin-bottom: 17px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.legend-bot{
+  width: 100%;
+  height: 625px;
+  margin-top: 46px;
+  @include bp(md) {
+    width: 100%;
+    height: calc(60vw - 60px);
+  }
+  @include bp(xs) {
+    margin-top: 30px;
+    height: calc(61vw - 30px);
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

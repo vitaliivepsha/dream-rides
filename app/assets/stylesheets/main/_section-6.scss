@@ -1,0 +1,129 @@
+.faq-section{
+  padding: 80px 0;
+  @include bp(xs) {
+    padding: 28px 0 50px;
+  }
+  .section-title{
+    margin-bottom: 42px;
+    @include bp(xs) {
+      margin-bottom: 26px;
+    }
+  }
+}
+
+.faq-item{
+  border: 1px solid #000;
+  +.faq-item{
+    margin-top: 20px;
+    @include bp(xs) {
+      margin-top: 10px;
+    }
+  }
+}
+
+.faq-head{
+  height: 100px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px 30px 20px 25px;
+  font-size: 18px;
+  line-height: 19px;
+  @include bp(xs) {
+    height: auto;
+    min-height: 50px;
+    padding: 10px 7px 10px 10px;
+    font-size: 13px;
+    line-height: 13px;
+  }
+  &.active{
+    >i{
+      svg{
+        display: none;
+        +svg{
+          display: block;
+        }
+      }
+    }
+  }
+  >img{
+    width: 46px;
+    min-width: 46px;
+    height: 46px;
+    object-fit: contain;
+    margin-right: 24px;
+    @include bp(xs) {
+      width: 30px;
+      min-width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+  }
+  >span{
+    flex: 1 0 auto;
+    max-width: calc(100% - 116px);
+    @include bp(xs) {
+      max-width: calc(100% - 70px);
+    }
+  }
+  >i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    min-width: 46px;
+    height: 46px;
+    @include bp(xs) {
+      width: 30px;
+      min-width: 30px;
+      height: 30px;
+    }
+    svg{
+      @include bp(xs) {
+        width: 12px;
+        height: fit-content;
+      }
+      +svg{
+        display: none;
+      }
+    }
+  }
+}
+
+.faq-body{
+  display: none;
+  padding: 0 95px 38px;
+  font-size: 18px;
+  line-height: 140%;
+  @include bp(xs) {
+    font-size: 13px;
+    padding: 5px 20px 14px 50px;
+  }
+  p{
+    margin-bottom: 14px;
+    @include bp(xs) {
+      margin-bottom: 9px;
+    }
+  }
+  ul{
+    padding-left: 18px;
+    margin-bottom: 14px;
+    list-style-type: disc;
+    @include bp(xs) {
+      margin-bottom: 9px;
+    }
+  }
+  ol{
+    padding-left: 18px;
+    margin-bottom: 14px;
+    list-style-type: decimal;
+    @include bp(xs) {
+      margin-bottom: 9px;
+    }
+  }
+  *{
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}

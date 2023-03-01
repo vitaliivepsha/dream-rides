@@ -1,0 +1,33 @@
+.rental-section{
+  background: url("../images/bg-rental.jpg") no-repeat center;
+  width: 100%;
+  background-size: cover;
+  height: 1000px;
+  padding-top: 135px;
+  @media (min-width: 1921px){
+    height: 52vw;
+    padding-top: 9vw;
+  }
+  @include bp(sm) {
+    height: 745px;
+    padding-top: 50px;
+  }
+  @include bp(xs) {
+    height: 125vw;
+    padding-top: 45px;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .section-title{
+    max-width: 720px;
+    margin-bottom: 30px;
+    @include bp(xs) {
+      margin-bottom: 16px;
+    }
+  }
+}
+

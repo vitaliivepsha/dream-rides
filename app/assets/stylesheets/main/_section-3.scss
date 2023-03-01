@@ -1,0 +1,57 @@
+.conditions-section{
+  background: url("../images/bg-conditions.jpg") no-repeat center;
+  background-attachment: fixed;
+  width: 100%;
+  background-size: cover;
+  height: 603px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  @media (min-width: 1921px){
+    height: 31vw;
+  }
+  @include bp(xs) {
+    height: 100vw;
+    background: url("../images/bg-conditions__mob.jpg") no-repeat center;
+    background-attachment: unset;
+    background-size: cover;
+  }
+  &:after{
+    position: absolute;
+    content: '';
+    background: rgba(0, 0, 0, 0.4);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .btn{
+    margin-top: 23px;
+    @include bp(xs) {
+      height: 30px;
+      margin-top: 13px;
+    }
+  }
+}
+
+.conditions-descr{
+  margin-top: 22px;
+  display: block;
+  font-size: 21px;
+  line-height: 22px;
+  @include bp(xs) {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 130%;
+  }
+}

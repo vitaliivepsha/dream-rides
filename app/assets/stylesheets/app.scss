@@ -1,0 +1,384 @@
+@import "variables";
+@import "vendor";
+@import "fonts";
+@import "mixin";
+
+html{
+  max-width: 100vw;
+}
+
+body {
+  min-width: 280px;
+  max-width: 100vw;
+  overflow-x: hidden;
+  color: #000;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 18px;
+  line-height: 140%;
+  background: #fff;
+  font-family: $default, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: linear .3s;
+  @include bp(md) {
+    display: block;
+  }
+  &.menu-opened {
+    overflow: hidden;
+    height: 100vh;
+    .header{
+      background: #000;
+    }
+    .mobile-menu__wrapper {
+      z-index: 10001;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  &.swal2-shown {
+    position: static;
+  }
+}
+
+ol,
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+a,
+.slick-slide {
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+
+a {
+  transition: .2s linear;
+  &:not([class]) {
+    color: #000;
+    opacity: .5;
+    text-decoration: none;
+    &:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+  }
+}
+
+svg {
+  * {
+    transition: linear 0.2s;
+  }
+}
+
+main {
+  flex: 1 0 auto;
+  position: relative;
+  @include bp(md) {
+    min-height: calc(100vh - 310px);
+  }
+  @include bp(xs) {
+    min-height: calc(100vh - 434px);
+  }
+}
+
+.section {
+  clear: both;
+  position: relative;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  width: calc(100% - 30px);
+  @include bp(xs) {
+    width: 100%;
+  }
+}
+
+.container,
+.row {
+  &:before,
+  &:after {
+    display: none;
+  }
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0 15px;
+  min-width: 200px;
+  width: fit-content;
+  max-width: 100%;
+  height: 50px;
+  font-family: $title;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  color: #fff;
+  outline: none !important;
+  position: relative;
+  transition: ease-in-out 0.2s;
+  @include bp(xs) {
+    height: 45px;
+    min-width: 90px;
+    font-size: 10px;
+    line-height: 13px;
+  }
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+  &:hover {
+    text-decoration: none;
+    outline: none;
+    background-color: #fff;
+    color: #000;
+  }
+  &.btn-b{
+    border-color: #000;
+    background-color: #000;
+    color: #fff;
+    &:hover {
+      background-color: transparent;
+      color: #000;
+    }
+  }
+  &[disabled]{
+    opacity: 1;
+  }
+}
+
+.input-wrapper{
+  position: relative;
+  width: 100%;
+  &.err {
+    >svg{
+      opacity: 1;
+    }
+    .input{
+      border-color: $red;
+      &::placeholder{
+        color: transparent;
+      }
+    }
+    +.input-wrapper{
+      margin-top: 0 !important;
+    }
+  }
+  >svg{
+    position: absolute;
+    right: 25px;
+    top: 17px;
+    opacity: 0;
+    pointer-events: none;
+    @include bp(xs) {
+      right: 16px;
+      top: 12px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 0 25px;
+  height: 60px;
+  border: 1px solid #000;
+  color: #000;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 19px;
+  background: transparent;
+  outline: none !important;
+  box-shadow: none;
+  border-radius: 0;
+  @include bp(xs) {
+    height: 40px;
+    font-size: 13px;
+    line-height: 13px;
+    padding: 0 15px;
+    @supports (-webkit-touch-callout: none) {
+      font-size: 16px;
+    }
+  }
+  &::placeholder {
+    font-size: 18px;
+    line-height: 19px;
+    color: #000;
+    @include bp(xs) {
+      font-size: 13px;
+      line-height: 13px;
+    }
+  }
+  &:focus {
+    &::placeholder {
+      color: transparent;
+    }
+  }
+}
+
+.checkbox-wrapper{
+  input{
+    display: none;
+    +label{
+      display: block;
+      align-items: flex-start;
+      font-weight: 400;
+      margin-bottom: 0;
+      position: relative;
+      font-size: 12px;
+      line-height: 12px;
+      color: #000;
+      cursor: pointer;
+      padding-left: 38px;
+      @include bp(xs) {
+        font-size: 10px;
+        line-height: 10px;
+        padding-left: 22px;
+      }
+      a{
+        color: #000;
+        text-decoration: underline;
+        &:hover, &:focus{
+          color: #000;
+          text-decoration: none;
+        }
+      }
+      &:before{
+        position: absolute;
+        content: '';
+        border: 1px solid #000;
+        width: 20px;
+        height: 20px;
+        border-radius: 0;
+        left: 0;
+        top: 2px;
+        @include bp(xs) {
+          width: 15px;
+          height: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    &:checked{
+      +label{
+        &:after{
+          position: absolute;
+          content: '';
+          width: 6px;
+          height: 10px;
+          border: 2px solid #000;
+          border-left: none;
+          border-top: none;
+          transform: rotate(45deg);
+          top: 5px;
+          left: 7px;
+          @include bp(xs) {
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            left: 6px;
+            margin-top: -1px;
+            width: 5px;
+            height: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.validate-error{
+  position: relative;
+  left: auto;
+  top: auto;
+  padding: 0;
+  margin-left: 25px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  width: fit-content;
+  font-size: 12px;
+  line-height: 12px;
+  color: $red;
+  transform: none;
+  font-family: $default, -apple-system, BlinkMacSystemFont, sans-serif;
+  pointer-events: none;
+  @include bp(xs) {
+    margin-left: 0;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    line-height: 10px;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+select:-webkit-autofill,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:hover,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:hover {
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: inset 0 0 0 1000px transparent;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #000;
+}
+
+::selection {
+  background: rgba(#666, 0.35);
+  color: #fff;
+  text-shadow: none;
+}
+
+// Header
+@import "header";
+
+// Main
+@import "main/section-1";
+@import "main/section-2";
+@import "main/section-3";
+@import "main/section-4";
+@import "main/section-5";
+@import "main/section-6";
+@import "main/section-7";
+@import "main/section-8";
+@import "main/section-9";
+
+// Footer
+@import "footer";
+
+// Pages
+@import "catalog";
+@import "product";
+@import "contacts";
+@import "conditions";
+@import "404";
+@import "data-protection";
+
+// Parts
+@import "popup";
+
+@import "animations";

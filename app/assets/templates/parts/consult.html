@@ -1,0 +1,31 @@
+<div class="section consult-section">
+    <div class="container">
+        <form class="ajax_form consult-form" data-error-title="Fehler senden!" data-error-message="Versuchen Sie es nach einer Weile erneut." data-success-title="Danke für die Bewerbung!" data-success-message="Unser Manager wird sich bald mit Ihnen in Verbindung setzen." data-success-btn="gut, danke">
+            <div class="section-title">Beratungsgespräch</div>
+            <div class="input-wrapper">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.411 14.889L12.088 6.746H13.669L13.346 14.889H12.411ZM12.054 18V16.266H13.703V18H12.054Z" fill="#FF0000"/>
+                    <circle cx="12.5" cy="12.5" r="12" stroke="#FF0000"/>
+                </svg>
+                <input class="input" type="text" name="name" data-title="Name" placeholder="Name" data-validate-required="Bitte geben Sie Ihren Namen ein.">
+            </div>
+            <div class="input-wrapper">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.411 14.889L12.088 6.746H13.669L13.346 14.889H12.411ZM12.054 18V16.266H13.703V18H12.054Z" fill="#FF0000"/>
+                    <circle cx="12.5" cy="12.5" r="12" stroke="#FF0000"/>
+                </svg>
+                <input class="input" type="text" name="telefon" data-title="Telefon" placeholder="Telefonnumer" data-validate-required="Bitte geben sie ihre Telefonnummer ein.">
+            </div>
+            <div class="form-footer">
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="agreement" name="agreement" data-title="Agreement" value="">
+                    <label for="agreement">Hiermit akzeptiere ich die Verarbeitung meiner Daten im Sinne der Datenschutzerklärung.</label>
+                </div>
+                <button type="submit" class="btn btn-b" data-sending="Senden..." data-error="Fehler :(" data-sent="Gesendet" disabled>Konsultieren</button>
+            </div>
+        </form>
+        <div class="consult-pic">
+            <img src="../../images/consult-pic.png" alt="">
+        </div>
+    </div>
+</div>

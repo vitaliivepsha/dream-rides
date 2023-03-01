@@ -1,0 +1,103 @@
+.consult-section{
+  background-color: $grey;
+  padding-top: 90px;
+  padding-bottom: 115px;
+  @include bp(lg) {
+    overflow: hidden;
+  }
+  @include bp(xs) {
+    padding-top: 48px;
+    padding-bottom: 30px;
+  }
+  .section-title{
+    margin-bottom: 30px;
+    @include bp(xs) {
+      margin-bottom: 25px;
+    }
+  }
+  .container{
+    display: flex;
+    @include bp(md) {
+      flex-direction: column;
+    }
+  }
+}
+
+.consult-form{
+  width: 635px;
+  @include bp(lg) {
+    width: 500px;
+  }
+  @include bp(md) {
+    width: 100%;
+  }
+  .input-wrapper{
+    +.input-wrapper{
+      margin-top: 20px;
+      @include bp(xs) {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.form-footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  @include bp(xs) {
+    flex-direction: column;
+    margin-top: 18px;
+  }
+  .checkbox-wrapper{
+    display: flex;
+    padding-right: 25px;
+    @include bp(xs) {
+      padding-right: 0;
+    }
+  }
+  .btn{
+    min-width: 255px;
+    @include bp(xs) {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+}
+
+.consult-pic{
+  width: calc(100% - 635px);
+  position: relative;
+  pointer-events: none;
+  @include bp(lg) {
+    width: calc(100% - 500px);
+  }
+  @include bp(md) {
+    width: 100%;
+    margin-bottom: -140px;
+  }
+  @include bp(xs) {
+    width: 250px;
+    height: 188px;
+    margin: -15px auto 0;
+  }
+  img{
+    position: absolute;
+    width: 538px;
+    height: 404px;
+    object-fit: contain;
+    top: -45px;
+    left: 10px;
+    @include bp(md) {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @include bp(xs) {
+      width: 100%;
+      height: 100%;
+      top: auto;
+    }
+  }
+}

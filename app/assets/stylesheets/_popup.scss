@@ -1,0 +1,97 @@
+.swal2-container.swal2-shown {
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  z-index: 10007;
+}
+
+.swal2-modal {
+  padding: 40px !important;
+  background-color: #fff !important;
+  width: 540px !important;
+  max-width: calc(100vw - 30px);
+  border-radius: 0;
+  color: #000;
+  @include bp(xs) {
+    padding: 30px 28px !important;
+  }
+  .swal2-icon {
+    background: url("../images/star-lg.png") no-repeat center;
+    background-size: cover;
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 25px;
+    border: none;
+    @include bp(xs) {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 18px;
+    }
+    >*{
+      display: none !important;
+    }
+  }
+  .swal2-title {
+    margin-bottom: 9px;
+    font-family: $title;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 27px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+    @include bp(xs) {
+      font-size: 16px;
+      line-height: 21px;
+      margin-bottom: 7px;
+    }
+  }
+  .swal2-content {
+    margin: 0 auto 27px;
+    font-family: $default;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    color: #000;
+    @include bp(xs) {
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+  }
+  .swal2-confirm {
+    display: block !important;
+  }
+  .swal2-styled {
+    margin: 0 auto;
+    width: fit-content;
+    min-width: 200px;
+    height: 50px;
+    font-family: $title;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid;
+    border-color: #000 !important;
+    background-color: #000 !important;
+    border-radius: 100px;
+    outline: none !important;
+    box-shadow: none !important;
+    transition: all linear 0.2s;
+    @include bp(xs) {
+      height: 40px;
+      min-width: 150px;
+      font-size: 10px;
+      line-height: 13px;
+    }
+    &:hover {
+      color: #000;
+      background-color: #fff !important;
+      border-color: #000 !important;
+    }
+  }
+}
