@@ -43,11 +43,11 @@
 }
 
 .footer-logo{
-  width: 311px;
-  height: 38px;
+  width: 146px;
+  height: auto;
   @include bp(md) {
-    width: 230px;
-    height: 29px;
+    width: 115px;
+    height: auto;
   }
   img{
     width: 100%;

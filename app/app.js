@@ -44,13 +44,13 @@ $(function () {
     // animations
 
     setTimeout(function () {
-        var doAnimations = function() {
+        var doAnimations = function () {
             var offset = $(window).scrollTop() + $(window).height(),
                 $animatables = $('main .animate');
             if ($animatables.length == 0) {
                 $(window).off('scroll', doAnimations);
             }
-            $animatables.each(function(i) {
+            $animatables.each(function (i) {
                 var $animatable = $(this);
                 if (($animatable.offset().top + $animatable.height() - 20) < offset) {
                     $animatable.removeClass('animate').addClass('animated');
@@ -63,17 +63,38 @@ $(function () {
 
     // fixed header
 
-    var header = $('.header');
+    // var header = $('.header');
+    //
+    // $(window).scroll(function () {
+    //     var scrolled = $(window).scrollTop();
+    //
+    //     if (scrolled > 90) {
+    //         header.addClass('fixed');
+    //     } else {
+    //         header.removeClass('fixed');
+    //     }
+    // });
+    //
 
+
+    var header = $(".header");
+    var headerMain = $(".header.header_main");
+    var scrollPrev = 0;
     $(window).scroll(function () {
         var scrolled = $(window).scrollTop();
-
-        if (scrolled > 90) {
-            header.addClass('fixed');
+        if (scrolled > 120 && scrolled > scrollPrev) {
+            header.addClass("fixed");
         } else {
-            header.removeClass('fixed');
+            header.removeClass("fixed");
         }
+        if (scrolled < 30) {
+            headerMain.addClass("bg");
+        } else {
+            headerMain.removeClass("bg");
+        }
+        scrollPrev = scrolled;
     });
+
 
     // language dropdown
 
