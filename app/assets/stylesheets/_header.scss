@@ -269,12 +269,12 @@
 .header-phone {
   display: flex;
   align-items: center;
-  text-decoration: none;
-  color: #fff;
+  color: #fff !important;
   margin-left: 40px;
   //margin-left: 22px;
   font-size: 24px;
   line-height: 25px;
+  text-decoration: none !important;
   @include bp(md) {
     font-size: 0;
     height: 46px;
@@ -291,8 +291,7 @@
   }
 
   &:hover {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5) !important;
   }
 
   svg {
